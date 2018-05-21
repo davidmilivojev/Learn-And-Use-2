@@ -1,0 +1,29 @@
+body {
+  font-family: 'Muse-light';
+}
+
+// * {
+//   transition: all ease-in-out 250ms;
+// }
+
+ul {
+  list-style: none;
+  li {
+    text-decoration: none;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container2 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
