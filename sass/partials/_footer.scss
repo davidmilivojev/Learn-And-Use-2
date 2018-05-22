@@ -9,12 +9,12 @@ footer {
   }
   p {
     color: $text-color-darkgrey;
-
     @include respond-to(medium) {
-      color: green;
+      color: $icons-color;
     }
     @include respond-to(small) {
-      color: red;
+      color: $text-color-darkgrey;
+      margin: 0 10px;
     }
   }
   #up {
@@ -30,5 +30,14 @@ footer {
     color: #fff;
     font-size: 40px;
     cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+    @include respond-to(medium){
+      left: 90%;
+    }
+    @include respond-to(small){
+      display: none;
+    }
   }
 }

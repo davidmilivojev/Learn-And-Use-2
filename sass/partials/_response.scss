@@ -5,7 +5,7 @@
   @else if $device == medium {
     @media only screen and (min-width: 481px) and (max-width: 768px) { @content; }
   }
-  @else if $device == wide {
+  @else if $device == large {
     @media only screen and (min-width: 1024px) { @content; }
   }
 }

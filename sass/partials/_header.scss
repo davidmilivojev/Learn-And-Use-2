@@ -10,32 +10,194 @@ header {
       clear: both;
     }
   }
+  .nav-toggle {
+    display: none;
+  }
+  @include respond-to(medium) {
+    .nav-toggle {
+      display: block;
+      padding: 1em;
+      position: absolute;
+      right: 1em;
+      cursor: pointer;
+      .hamburger,
+      .hamburger::before,
+      .hamburger::after {
+        content: '';
+        display: block;
+        width: 2em;
+        height: 4px;
+        background: #fff;
+        transition: all ease-in-out 250ms;
+      }
+      .hamburger::before {
+        transform: translateY(-9px);
+      }
+      .hamburger::after {
+        transform: translateY(5px);
+      }
+      .hamburger.is-open {
+        transform: rotate(45deg);
+        &::before {
+          opacity: 0;
+        }
+        &::after {
+          transform: rotate(90deg) translateX(-3px);
+        }
+      }
+    }
+  }
+  @include respond-to(small) {
+    .nav-toggle {
+      display: block;
+      padding: 1em;
+      position: absolute;
+      right: 1em;
+      cursor: pointer;
+      .hamburger,
+      .hamburger::before,
+      .hamburger::after {
+        content: '';
+        display: block;
+        width: 2em;
+        height: 4px;
+        background: #fff;
+        transition: all ease-in-out 250ms;
+      }
+      .hamburger::before {
+        transform: translateY(-9px);
+      }
+      .hamburger::after {
+        transform: translateY(5px);
+      }
+      .hamburger.is-open {
+        transform: rotate(45deg);
+        &::before {
+          opacity: 0;
+        }
+        &::after {
+          transform: rotate(90deg) translateX(-3px);
+        }
+      }
+    }
+  }
   .logo {
     float: left;
     padding-right: 40px;
     border-right: 1px solid $text-color;
+    @include respond-to(medium){
+      padding-right: 20px;
+      padding-left: 10px;
+    }
+    @include respond-to(small){
+      padding-left: 10px;
+      padding-right: 15px;
+    }
   }
-  .menu {
-    float: left;
-    padding-top: 10px;
-    li {
-      display: inline-block;
-      padding-right: 35px;
-      &:first-of-type{
-        padding-left: 40px;
-      }
-      a {
-        font-size: 18px;
-        font-weight: 700;
-        color: #fff;
-        &:hover {
-          color: $icons-color;
+  .main-nav {
+    position: relative;
+    .menu {
+      float: left;
+      padding-top: 10px;
+      li {
+        display: inline-block;
+        padding-right: 35px;
+        &:first-of-type{
+          padding-left: 40px;
         }
+        @include respond-to(medium){
+          display: -webkit-flex;
+          display: -ms-flex;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          &:first-of-type{
+            padding-left: 0px;
+          }
+          padding-right: 0;
+        }
+        @include respond-to(small){
+          display: -webkit-flex;
+          display: -ms-flex;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          &:first-of-type{
+            padding-left: 0px;
+          }
+          padding-right: 0;
+        }
+        a {
+          font-size: 18px;
+          font-weight: 700;
+          color: #fff;
+          &:hover {
+            color: $icons-color;
+          }
+          @include respond-to(medium){
+            padding: 30px 0;
+            border-bottom: 2px solid $icons-color;
+            &:hover {
+              color: $header-color;
+              border-bottom: 2px solid $header-color;
+            }
+          }
+          @include respond-to(small){
+            padding: 25px 0;
+            border-bottom: 2px solid $icons-color;
+            &:hover {
+              color: $header-color;
+              border-bottom: 2px solid $header-color;
+            }
+          }
+        }
+      }
+      @include respond-to(medium){
+        float: none;
+        padding-top: 0;
+      }
+      @include respond-to(small){
+        float: none;
+        padding-top: 0;
+      }
+    }
+    @include respond-to(medium){
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 99;
+      background: $icons-color;
+      width: 100%;
+      opacity: 1;
+      display: none;
+      &.is-open {
+        display: block;
+      }
+    }
+    @include respond-to(small){
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 99;
+      background: $icons-color;
+      width: 100%;
+      opacity: 1;
+      display: none;
+      &.is-open {
+        display: block;
       }
     }
   }
   .social {
     float: right;
+    @include respond-to(medium){
+      display: inline-block;
+      float: left;
+      padding-left: 20px;
+    }
+    @include respond-to(small){
+      display: none;
+    }
     li {
       position: relative;
       display: inline-block;

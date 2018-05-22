@@ -14,6 +14,16 @@
     opacity: .7;
     padding: 10px;
     margin-right: 50px;
+    @include respond-to(small){
+      position: relative;
+      transform: none;
+      left: 0;
+      font-size: 20px;
+      margin-right: 0;
+      text-align: center;
+      border-bottom: 15px solid $header-color;
+      opacity: 1;
+    }
   }
 }
 .intro {
@@ -29,23 +39,45 @@
       display: -webkit-flex;
       display: -ms-flex;
       display: flex;
+      @include respond-to(medium) {
+        width: 50%;
+        flex-direction: column;
+      }
+      @include respond-to(small){
+        width: 100%;
+      }
       .picture {
-        width: 70px;
+        // width: 70px;
         flex: 0 0 70px;
         padding-right: 15px;
-        img {
-          max-width: 100%;
+        @include respond-to(medium) {
+          img {
+            padding-left: 20px;
+          }
+        }
+        @include respond-to(small){
+          img {
+            padding-left: 20px;
+          }
         }
       }
       .text {
         width: 250px;
         padding-left: 20px;
         padding-bottom: 90px;
+        @include respond-to(medium){
+          width: auto;
+        }
         h2 {
           padding-bottom: 25px;
         }
         p {
           padding-bottom: 20px;
+        }
+        h4 {
+          img {
+            padding-bottom: 2px;
+          }
         }
       }
     }
@@ -64,6 +96,7 @@
   }
   p {
     line-height: 1.5;
+    padding: 0 10px;
   }
   h3 {
     padding-top: 40px;
@@ -101,6 +134,12 @@
   }
   .ads-img {
     flex: 1;
+    @include respond-to(medium){
+      display: none;
+    }
+    @include respond-to(small){
+      display: none;
+    }
   }
 }
 
